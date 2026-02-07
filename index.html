@@ -243,8 +243,8 @@ section{
   <div class="container">
     <div class="card">
       <div class="section-title">2026.05</div>
-      <p style="margin-top:24px;">5월 30일 토요일 오후 6시 30분</p>
       <div id="calendar" class="calendar"></div>
+      <p style="margin-top:24px;">5월 30일 토요일 오후 6시 30분</p>
     </div>
   </div>
 </section>
@@ -257,7 +257,7 @@ section{
       경기도 성남시 분당구 판교역로226번길 16<br>
       W스퀘어컨벤션 8층
       <div id="map"></div>
-      <a href="https://map.kakao.com" target="_blank" class="btn">카카오 지도에서 보기</a>
+      <a href="https://map.kakao.com/?q=경기도%20성남시%20분당구%20판교역로226번길%2016" target="_blank" class="btn">카카오 지도에서 보기</a>
     </div>
   </div>
 </section>
@@ -299,20 +299,25 @@ new Swiper(".swiper",{ loop:true, spaceBetween:20, pagination:{ el:".swiper-pagi
 <script>GLightbox({ selector:'.glightbox' });</script>
 
 <!-- 카카오 지도 API -->
-<script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey='41c76de12d0ee46243227982e1372e89'"></script>
+<script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=41c76de12d0ee46243227982e1372e89"></script>
 <script>
 var container = document.getElementById('map');
 var options = {
-  center: new kakao.maps.LatLng(37.5665, 126.9780),
-  level: 3
+  center: new kakao.maps.LatLng(37.400815926297, 127.11143462192), // 판교 W스퀘어 위도/경도
+  level: 4
 };
 
 var map = new kakao.maps.Map(container, options);
 
 var marker = new kakao.maps.Marker({
-  position: new kakao.maps.LatLng(37.5665, 126.9780)
+  position: new kakao.maps.LatLng(37.400815926297, 127.11143462192)
 });
 marker.setMap(map);
+
+var infowindow = new kakao.maps.InfoWindow({
+  content: '<div style="padding:5px;">W스퀘어컨벤션 8층</div>'
+});
+infowindow.open(map, marker);
 </script>
 
 <script>
@@ -348,5 +353,3 @@ for(let d=1;d<=lastDate;d++){
 
 </body>
 </html>
-
-
