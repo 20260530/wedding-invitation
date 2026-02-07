@@ -7,7 +7,7 @@
 
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://your-wedding-url.com"> <meta property="og:title" content="김남준 ♥ 정하림 결혼합니다">
-<meta property="og:description" content="2026년 5월 30일 토요일 오후 6시 30분, 저희 결혼식에 초대합니다.">
+<meta property="og:description" content="2026년 5월 30일 토요일 오후 6시 30분, 소중한 분들을 초대합니다.">
 <meta property="og:image" content="photo/hero.jpg"> <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"/>
 
@@ -288,9 +288,13 @@ section{
   <div class="container">
     <div class="section-title" data-aos="fade-up">Invitation</div>
     <div class="card" data-aos="fade-up">
-      서로 다른 두 사람이 만나<br>
-      이제 하나의 길을 함께 걸어가려 합니다.<br><br>
-      소중한 걸음에 따뜻한 축복으로 함께해 주세요.
+      자기야!<br>
+      어제 계속 서운하다고 해서 미안해.<br>
+      어쩌면 여행이라 너무 바빠서 자연스러운 걸수도 있는데도<br>
+      자기가 어제 계속 노력해준다고 말해줘서 감동이었어.<br>
+      나두 항상 자기 옆에서 노력하는 남편이 될게.<br><br> 
+      호호할미 & 허허할비될 때까지 주님 안에서 잘 살아보자!
+      항상 고맙구 사랑해♥♥♥<br>
     </div>
   </div>
 </section>
@@ -407,22 +411,57 @@ section{
     .then(()=>alert("청첩장 주소가 복사되었습니다 😊"));
   }
 
-  // 5. 배경음악 제어
+  // 5. 배경음악 제어 (자동 재생 시도 + 실패 시 첫 터치에 재생)
   const musicBtn = document.getElementById('musicBtn');
   const bgm = document.getElementById('bgm');
   let isPlaying = false;
 
-  musicBtn.addEventListener('click', function(){
-    if(isPlaying){
-      bgm.pause();
-      musicBtn.innerText = '🔇';
-    } else {
-      bgm.play();
-      musicBtn.innerText = '💿';
+    // 1) 페이지 로드 시 자동 재생 시도
+    window.addEventListener('load', function() {
+      var playPromise = bgm.play();
+  
+      if (playPromise !== undefined) {
+        playPromise.then(_ => {
+          // 자동 재생 성공
+          isPlaying = true;
+          musicBtn.innerText = '💿'; // 아이콘 변경
+        })
+        .catch(error => {
+          // 자동 재생 실패 (브라우저 정책) -> 첫 터치 대기
+          console.log("자동 재생이 막혔습니다. 사용자 인터랙션을 기다립니다.");
+          isPlaying = false;
+          musicBtn.innerText = '🔇';
+          
+          // 화면 아무곳이나 클릭/터치하면 바로 재생 시작
+          document.body.addEventListener('click', firstPlay, { once: true });
+          document.body.addEventListener('touchstart', firstPlay, { once: true });
+        });
+      }
+    });
+  
+    // 첫 터치 시 재생 함수
+    function firstPlay() {
+      if(!isPlaying){
+        bgm.play();
+        isPlaying = true;
+        musicBtn.innerText = '💿';
+      }
     }
-    isPlaying = !isPlaying;
-  });
+  
+    // 버튼 클릭으로 켜고 끄기
+    musicBtn.addEventListener('click', function(e){
+      e.stopPropagation(); // 버튼 클릭 시 body 클릭 이벤트 전파 방지
+      if(isPlaying){
+        bgm.pause();
+        musicBtn.innerText = '🔇';
+      } else {
+        bgm.play();
+        musicBtn.innerText = '💿';
+      }
+      isPlaying = !isPlaying;
+    });
 
+  
   // 6. 아코디언 기능
   var acc = document.getElementsByClassName("accordion-btn");
   for (var i = 0; i < acc.length; i++) {
@@ -499,3 +538,4 @@ for(let d=1;d<=lastDate;d++){
 
 </body>
 </html>
+
