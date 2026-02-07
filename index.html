@@ -12,9 +12,6 @@
 <!-- AOS -->
 <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
-<!-- Swiper -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-
 <!-- GLightbox -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css"/>
 
@@ -56,7 +53,7 @@ section{
   align-items:center;
   justify-content:center;
   position:relative;
-  color:#fff;
+  color:#2c2c2c;
 }
 
 .hero::after{
@@ -104,11 +101,6 @@ section{
 
 .mint-section{
   background:var(--mint-soft);
-}
-
-.swiper img{
-  width:100%;
-  border-radius:22px;
 }
 
 .calendar{
@@ -170,6 +162,24 @@ section{
   border-radius:20px;
   margin-top:20px;
 }
+
+/* 갤러리 그리드 */
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+}
+
+.gallery-grid img{
+  width:100%;
+  border-radius:15px;
+  cursor:pointer;
+  transition:transform 0.3s;
+}
+
+.gallery-grid img:hover{
+  transform:scale(1.05);
+}
 </style>
 </head>
 
@@ -196,44 +206,30 @@ section{
   </div>
 </section>
 
-<!-- GALLERY -->
+<!-- GALLERY (3x5 그리드 + GLightbox) -->
 <section>
   <div class="container">
     <div class="section-title">Gallery</div>
-    <div class="swiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <a href="photo/photo01.jpg" class="glightbox">
-            <img src="photo/photo01.jpg" loading="lazy">
-          </a>
-        </div>
-        <div class="swiper-slide">
-          <a href="photo/photo02.jpg" class="glightbox">
-            <img src="photo/photo02.jpg" loading="lazy">
-          </a>
-        </div>
-        <div class="swiper-slide">
-          <a href="photo/photo03.jpg" class="glightbox">
-            <img src="photo/photo03.jpg" loading="lazy">
-          </a>
-        </div>
-        <div class="swiper-slide">
-          <a href="photo/photo04.jpg" class="glightbox">
-            <img src="photo/photo04.jpg" loading="lazy">
-          </a>
-        </div>
-        <div class="swiper-slide">
-          <a href="photo/photo05.jpg" class="glightbox">
-            <img src="photo/photo05.jpg" loading="lazy">
-          </a>
-        </div>
-        <div class="swiper-slide">
-          <a href="photo/photo06.jpg" class="glightbox">
-            <img src="photo/photo06.jpg" loading="lazy">
-          </a>
-        </div>
-      </div>
-      <div class="swiper-pagination"></div>
+    <div class="gallery-grid">
+      <a href="photo/photo01.jpg" class="glightbox">
+        <img src="photo/photo01.jpg" loading="lazy">
+      </a>
+      <a href="photo/photo02.jpg" class="glightbox">
+        <img src="photo/photo02.jpg" loading="lazy">
+      </a>
+      <a href="photo/photo03.jpg" class="glightbox">
+        <img src="photo/photo03.jpg" loading="lazy">
+      </a>
+      <a href="photo/photo04.jpg" class="glightbox">
+        <img src="photo/photo04.jpg" loading="lazy">
+      </a>
+      <a href="photo/photo05.jpg" class="glightbox">
+        <img src="photo/photo05.jpg" loading="lazy">
+      </a>
+      <a href="photo/photo06.jpg" class="glightbox">
+        <img src="photo/photo06.jpg" loading="lazy">
+      </a>
+      <!-- 필요 시 추가 사진 -->
     </div>
   </div>
 </section>
@@ -289,38 +285,10 @@ section{
 </section>
 
 <!-- JS -->
-
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script>
-new Swiper(".swiper",{ loop:true, spaceBetween:20, pagination:{ el:".swiper-pagination", clickable:true }});
-</script>
-
 <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
-<script>GLightbox({ selector:'.glightbox' });</script>
-
-<!-- 카카오 지도 API -->
-<script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=41c76de12d0ee46243227982e1372e89"></script>
 <script>
-var container = document.getElementById('map');
-var options = {
-  center: new kakao.maps.LatLng(37.400815926297, 127.11143462192), // 판교 W스퀘어 위도/경도
-  level: 4
-};
+GLightbox({ selector:'.glightbox', loop:true });
 
-var map = new kakao.maps.Map(container, options);
-
-var marker = new kakao.maps.Marker({
-  position: new kakao.maps.LatLng(37.400815926297, 127.11143462192)
-});
-marker.setMap(map);
-
-var infowindow = new kakao.maps.InfoWindow({
-  content: '<div style="padding:5px;">W스퀘어컨벤션 8층</div>'
-});
-infowindow.open(map, marker);
-</script>
-
-<script>
 function copyAccount(account){
   navigator.clipboard.writeText(account)
   .then(()=>alert("계좌번호가 복사되었습니다 😊"));
@@ -330,6 +298,30 @@ function copyURL(){
   navigator.clipboard.writeText(window.location.href)
   .then(()=>alert("청첩장 주소가 복사되었습니다 😊"));
 }
+</script>
+
+<!-- 카카오 지도 API -->
+<script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=41c76de12d0ee46243227982e1372e89"></script>
+<script>
+window.onload = function(){
+  var container = document.getElementById('map');
+  var options = {
+    center: new kakao.maps.LatLng(37.400815926297, 127.11143462192),
+    level: 4
+  };
+
+  var map = new kakao.maps.Map(container, options);
+
+  var marker = new kakao.maps.Marker({
+    position: new kakao.maps.LatLng(37.400815926297, 127.11143462192)
+  });
+  marker.setMap(map);
+
+  var infowindow = new kakao.maps.InfoWindow({
+    content: '<div style="padding:5px;">W스퀘어컨벤션 8층</div>'
+  });
+  infowindow.open(map, marker);
+};
 </script>
 
 <script>
@@ -353,4 +345,3 @@ for(let d=1;d<=lastDate;d++){
 
 </body>
 </html>
-
