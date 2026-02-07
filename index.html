@@ -9,9 +9,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"/>
 
-<!-- AOS -->
-<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-
 <!-- GLightbox -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css"/>
 
@@ -36,7 +33,7 @@ body{
 }
 
 section{
-  padding:120px 24px 90px;
+  padding:100px 24px 70px; /* 살짝 줄임 */
   text-align:center;
 }
 
@@ -53,7 +50,7 @@ section{
   align-items:center;
   justify-content:center;
   position:relative;
-  color:#fff;
+  color:#2c2c2c;
 }
 
 .hero::after{
@@ -78,15 +75,15 @@ section{
 .section-title{
   font-family:'Playfair Display', serif;
   font-size:26px;
-  margin-bottom:60px;
+  margin-bottom:50px; /* 조금 줄임 */
 }
 
 .card{
   background:#fff;
   border-radius:30px;
-  padding:50px 32px;
+  padding:40px 32px; /* 살짝 줄임 */
   box-shadow:0 40px 80px rgba(0,0,0,0.04);
-  margin-bottom:36px;
+  margin-bottom:30px;
   position:relative;
 }
 
@@ -131,13 +128,13 @@ section{
 .notice{
   font-size:14px;
   color:var(--sub);
-  margin-top:30px;
+  margin-top:20px; /* 여백 조금 줄임 */
   line-height:1.8;
 }
 
 .btn{
   display:inline-block;
-  margin-top:22px;
+  margin-top:20px;
   padding:14px 34px;
   border-radius:50px;
   background:var(--mint-deep);
@@ -152,8 +149,8 @@ section{
 
 .btn:hover{
   background:#21453c;
-  transform:translateY(-3px);
-  box-shadow:0 10px 20px rgba(0,0,0,0.1);
+  transform:translateY(-2px);
+  box-shadow:0 8px 15px rgba(0,0,0,0.1);
 }
 
 #map{
@@ -172,6 +169,8 @@ section{
 
 .gallery-grid img{
   width:100%;
+  height:200px; /* 고정 세로 크기 */
+  object-fit:cover; /* 가로 사진 확대하여 세로 맞춤 */
   border-radius:15px;
   cursor:pointer;
   transition:transform 0.3s;
@@ -179,6 +178,17 @@ section{
 
 .gallery-grid img:hover{
   transform:scale(1.05);
+}
+
+@media (max-width:768px){
+  .gallery-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+@media (max-width:480px){
+  .gallery-grid{
+    grid-template-columns:1fr;
+  }
 }
 </style>
 </head>
@@ -212,24 +222,23 @@ section{
     <div class="section-title">Gallery</div>
     <div class="gallery-grid">
       <a href="photo/photo01.jpg" class="glightbox">
-        <img src="photo/photo01.jpg" loading="lazy">
+        <img src="photo/photo01.jpg" loading="lazy" alt="Wedding photo 1">
       </a>
       <a href="photo/photo02.jpg" class="glightbox">
-        <img src="photo/photo02.jpg" loading="lazy">
+        <img src="photo/photo02.jpg" loading="lazy" alt="Wedding photo 2">
       </a>
       <a href="photo/photo03.jpg" class="glightbox">
-        <img src="photo/photo03.jpg" loading="lazy">
+        <img src="photo/photo03.jpg" loading="lazy" alt="Wedding photo 3">
       </a>
       <a href="photo/photo04.jpg" class="glightbox">
-        <img src="photo/photo04.jpg" loading="lazy">
+        <img src="photo/photo04.jpg" loading="lazy" alt="Wedding photo 4">
       </a>
       <a href="photo/photo05.jpg" class="glightbox">
-        <img src="photo/photo05.jpg" loading="lazy">
+        <img src="photo/photo05.jpg" loading="lazy" alt="Wedding photo 5">
       </a>
       <a href="photo/photo06.jpg" class="glightbox">
-        <img src="photo/photo06.jpg" loading="lazy">
+        <img src="photo/photo06.jpg" loading="lazy" alt="Wedding photo 6">
       </a>
-      <!-- 필요 시 추가 사진 -->
     </div>
   </div>
 </section>
@@ -263,11 +272,6 @@ section{
   <div class="container">
     <div class="section-title">Account</div>
 
-    <div class="notice">
-      보내주시는 화환은 정중히 사양하겠습니다.<br>
-      따뜻한 마음만으로도 충분히 감사드립니다.
-    </div>
-
     <div class="card">
       <strong>신랑 측</strong><br>
       국민은행 123-456-789012<br>
@@ -278,6 +282,11 @@ section{
       <strong>신부 측</strong><br>
       신한은행 987-654-321000<br>
       <button class="btn" onclick="copyAccount('987-654-321000')">계좌 복사</button>
+    </div>
+
+    <div class="notice">
+      보내주시는 화환은 정중히 사양하겠습니다.<br>
+      따뜻한 마음만으로도 충분히 감사드립니다.
     </div>
 
     <button class="btn" onclick="copyURL()">청첩장 주소 복사하기</button>
@@ -301,9 +310,9 @@ function copyURL(){
 </script>
 
 <!-- 카카오 지도 API -->
-<script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=41c76de12d0ee46243227982e1372e89"></script>
+<script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=41c76de12d0ee46243227982e1372e89&autoload=false"></script>
 <script>
-window.onload = function(){
+kakao.maps.load(function() {
   var container = document.getElementById('map');
   var options = {
     center: new kakao.maps.LatLng(37.400815926297, 127.11143462192),
@@ -318,10 +327,10 @@ window.onload = function(){
   marker.setMap(map);
 
   var infowindow = new kakao.maps.InfoWindow({
-    content: '<div style="padding:5px;">W스퀘어컨벤션 8층</div>'
+    content: '<div title="W스퀘어컨벤션 8층" style="padding:5px;">W스퀘어컨벤션 8층</div>'
   });
   infowindow.open(map, marker);
-};
+});
 </script>
 
 <script>
@@ -345,5 +354,3 @@ for(let d=1;d<=lastDate;d++){
 
 </body>
 </html>
-
-
