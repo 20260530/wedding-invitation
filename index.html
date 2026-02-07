@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>우리의 결혼식에 초대합니다</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Nanum Myeongjo', serif;
+    background: #fff;
+    color: #333;
+    text-align: center;
+}
+
+/* 공통 섹션 */
+section {
+    padding: 60px 20px;
+}
+
+/* 인트로 */
+.hero {
+    height: 100vh;
+    background: url('https://images.unsplash.com/photo-1520857014576-2c4f4c972b57') center/cover no-repeat;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-blend-mode: darken;
+    background-color: rgba(0,0,0,0.3);
+}
+
+.hero h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 16px;
+}
+
+/* 인사말 */
+.message {
+    background: #faf7f2;
+    line-height: 1.8;
+}
+
+/* 신랑신부 */
+.couple img {
+    width: 140px;
+    border-radius: 50%;
+    margin: 15px;
+}
+
+/* 갤러리 */
+.gallery img {
+    width: 90%;
+    max-width: 400px;
+    margin: 10px 0;
+    border-radius: 10px;
+}
+
+/* 오시는 길 */
+.location {
+    background: #faf7f2;
+}
+
+/* 버튼 */
+.button {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #c7a17a;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    margin-top: 15px;
+}
+
+/* 푸터 */
+footer {
+    padding: 40px;
+    font-size: 14px;
+    color: #888;
+}
+</style>
+</head>
+
+<body>
+
+<!-- 🎵 배경음악 -->
+<audio autoplay loop>
+  <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_8c9a9a7e9e.mp3" type="audio/mpeg">
+</audio>
+
+<!-- 1. 인트로 -->
+<section class="hero">
+    <h1>김남준 🤍 정하림</h1>
+    <p>2026년 6월 20일 토요일 오후 1시</p>
+    <p>서울 어딘가 웨딩홀</p>
+</section>
+
+<!-- 2. 인사말 -->
+<section class="message">
+    <h2>초대합니다</h2>
+    <p>
+        서로 다른 두 사람이 만나<br>
+        사랑으로 하나가 되려 합니다.<br><br>
+        귀한 걸음 하시어<br>
+        저희의 새로운 시작을<br>
+        축복해 주시면 감사하겠습니다.
+    </p>
+</section>
+
+<!-- 3. 신랑 신부 -->
+<section class="couple">
+    <h2>신랑 · 신부</h2>
+    <img src="https://images.unsplash.com/photo-1502685104226-ee32379fefbe" alt="신랑">
+    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330" alt="신부">
+    <p>신랑 김남준 / 신부 정하림</p>
+</section>
+
+<!-- 4. 갤러리 -->
+<section class="gallery">
+    <h2>Wedding Gallery</h2>
+    <img src="https://images.unsplash.com/photo-1519741497674-611481863552">
+    <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486">
+    <img src="https://images.unsplash.com/photo-1537633552985-df8429e8048b">
+</section>
+
+<!-- 5. 오시는 길 -->
+<section class="location">
+    <h2>오시는 길</h2>
+    <p>서울특별시 강남구 테헤란로 123</p>
+    <a class="button" href="https://map.naver.com" target="_blank">지도 보기</a>
+</section>
+
+<footer>
+    © 2026 Jaejin & Jungeun Wedding
+</footer>
+
+</body>
+</html>
