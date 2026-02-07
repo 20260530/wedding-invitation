@@ -3,193 +3,300 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Wedding Invitation</title>
+<title>김남준 ♥ 정하림 결혼합니다</title>
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"/>
 
 <!-- AOS -->
 <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
 <!-- Swiper -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 
 <!-- GLightbox -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
-
-<!-- Kakao SDK -->
-<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css"/>
 
 <style>
-body {
-  margin: 0;
-  font-family: 'Pretendard', sans-serif;
-  text-align: center;
-  background: #fafafa;
+:root{
+  --pink:#f5c7cf;
+  --ivory:#fdfaf7;
+  --text:#2e2e2e;
 }
 
-section {
-  padding: 60px 20px;
+*{box-sizing:border-box;}
+
+body{
+  margin:0;
+  font-family:'Pretendard', sans-serif;
+  background:var(--ivory);
+  color:var(--text);
+  line-height:1.7;
 }
 
-h1, h2 {
-  margin-bottom: 20px;
+section{
+  padding:80px 24px;
+  text-align:center;
 }
 
-img {
-  width: 100%;
-  border-radius: 12px;
+.container{
+  max-width:520px;
+  margin:auto;
 }
 
-.swiper {
-  width: 100%;
-  max-width: 600px;
-  margin: auto;
+.hero{
+  min-height:100vh;
+  height:100svh;
+  background-color:#333;
+  background-image:url('photo/mainphoto.jpg');
+  background-position:center;
+  background-size:cover;
+  background-repeat:no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  color:#fff;
 }
 
-.account-box {
-  margin-top: 30px;
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.35);
 }
 
-.account-box button {
-  padding: 10px 15px;
-  border-radius: 20px;
-  border: none;
-  background-color: #333;
-  color: white;
-  cursor: pointer;
+.hero-content{
+  position:relative;
+  z-index:2;
 }
 
-.kakao-btn {
-  background-color: #FEE500;
-  color: #000;
-  border: none;
-  padding: 14px 20px;
-  border-radius: 30px;
-  font-weight: bold;
-  cursor: pointer;
-  margin-top: 20px;
+.hero h1{
+  font-family:'Playfair Display', serif;
+  font-size:30px;
+  margin-bottom:10px;
+}
+
+.section-title{
+  font-family:'Playfair Display', serif;
+  font-size:22px;
+  margin-bottom:40px;
+}
+
+.card{
+  background:#fff;
+  border-radius:26px;
+  padding:36px 26px;
+  box-shadow:0 20px 45px rgba(0,0,0,0.06);
+  margin-bottom:24px;
+}
+
+.pink-section{
+  background:var(--pink);
+}
+
+.swiper{
+  width:100%;
+}
+
+.swiper img{
+  width:100%;
+  border-radius:18px;
+}
+
+.calendar{
+  display:grid;
+  grid-template-columns:repeat(7,1fr);
+  gap:8px;
+  font-size:13px;
+  margin-top:20px;
+}
+
+.calendar div{
+  padding:8px 0;
+}
+
+.wedding-day{
+  background:#000;
+  color:#fff;
+  border-radius:50%;
+}
+
+.notice{
+  font-size:14px;
+  color:#555;
+  margin-top:20px;
+  line-height:1.6;
+}
+
+.btn{
+  display:inline-block;
+  margin-top:16px;
+  padding:10px 20px;
+  border-radius:30px;
+  background:#000;
+  color:#fff;
+  font-size:13px;
+  text-decoration:none;
+  border:none;
+  cursor:pointer;
 }
 </style>
 </head>
 
 <body>
 
-<!-- 메인 -->
-<section data-aos="fade-up">
-  <h1>저희 결혼합니다 💍</h1>
-  <p>2026년 10월 10일 토요일</p>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content" data-aos="fade-up">
+    <h1>Namjoon & Harim</h1>
+    <p>2026.05.30 SAT 18:30</p>
+    <p>판교 W스퀘어웨딩홀</p>
+  </div>
 </section>
 
-<!-- 갤러리 -->
-<section data-aos="fade-up">
-  <h2>Wedding Gallery</h2>
-
-  <div class="swiper">
-    <div class="swiper-wrapper">
-
-      <!-- 사진 예시 -->
-      <div class="swiper-slide">
-        <a href="photo/photo01.jpg" class="glightbox" data-gallery="wedding">
-          <img src="photo/photo01.jpg" loading="lazy">
-        </a>
-      </div>
-
-      <div class="swiper-slide">
-        <a href="photo/photo02.jpg" class="glightbox" data-gallery="wedding">
-          <img src="photo/photo02.jpg" loading="lazy">
-        </a>
-      </div>
-
-      <!-- 필요하면 계속 추가 -->
-
+<!-- INVITATION -->
+<section>
+  <div class="container">
+    <div class="section-title" data-aos="fade-up">Invitation</div>
+    <div class="card" data-aos="fade-up">
+      서로 다른 두 사람이 만나<br>
+      이제 하나의 길을 걸어가려 합니다.<br><br>
+      따뜻한 축복으로 함께해 주세요.
     </div>
-    <div class="swiper-pagination"></div>
   </div>
 </section>
 
-<!-- 계좌번호 -->
-<section data-aos="fade-up">
-  <h2>마음 전하실 곳</h2>
+<!-- GALLERY -->
+<section>
+  <div class="container">
+    <div class="section-title" data-aos="fade-up">Gallery</div>
 
-  <div class="account-box">
-    <p>신랑 측</p>
-    <p>국민은행 123-456-789012</p>
-    <button onclick="copyAccount('123-456-789012')">계좌번호 복사</button>
+    <div class="swiper" data-aos="fade-up">
+      <div class="swiper-wrapper">
+
+        <div class="swiper-slide">
+          <a href="photo/photo01.jpg" class="glightbox">
+            <img src="photo/photo01.jpg" loading="lazy">
+          </a>
+        </div>
+
+        <div class="swiper-slide">
+          <a href="photo/photo02.jpg" class="glightbox">
+            <img src="photo/photo02.jpg" loading="lazy">
+          </a>
+        </div>
+
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+
   </div>
-
-  <div class="account-box">
-    <p>신부 측</p>
-    <p>신한은행 987-654-321000</p>
-    <button onclick="copyAccount('987-654-321000')">계좌번호 복사</button>
-  </div>
-
-  <button onclick="shareKakao()" class="kakao-btn">
-    카카오톡으로 공유하기
-  </button>
 </section>
 
-<!-- JS 영역 -->
+<!-- CALENDAR -->
+<section class="pink-section">
+  <div class="container">
+    <div class="card" data-aos="fade-up">
+      <div class="section-title">2026.05</div>
+      <div id="calendar" class="calendar"></div>
+      <p style="margin-top:20px;"></p>
+    </div>
+  </div>
+</section>
+
+<!-- ACCOUNT -->
+<section>
+  <div class="container">
+    <div class="section-title" data-aos="fade-up">Account</div>
+
+    <div class="card" data-aos="fade-up">
+      <strong>신랑 측</strong><br>
+      국민은행 123-456-789012<br>
+      <button class="btn" onclick="copyAccount('123-456-789012')">
+        계좌 복사
+      </button>
+    </div>
+
+    <div class="card" data-aos="fade-up">
+      <strong>신부 측</strong><br>
+      신한은행 987-654-321000<br>
+      <button class="btn" onclick="copyAccount('987-654-321000')">
+        계좌 복사
+      </button>
+    </div>
+
+    <div class="notice" data-aos="fade-up">
+      마음만으로도 충분히 감사드립니다.<br>
+      정중한 마음으로 화환은 사양하겠습니다.
+    </div>
+
+  </div>
+</section>
+
+<!-- JS -->
 
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
-AOS.init();
+AOS.init({ duration:1000, once:true });
 </script>
 
-<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
-var swiper = new Swiper(".swiper", {
-  loop: true,
-  speed: 600,
-  spaceBetween: 20,
-  preloadImages: false,
-  lazy: { loadPrevNext: true },
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true
-  }
+new Swiper(".swiper",{
+  loop:true,
+  spaceBetween:20,
+  pagination:{ el:".swiper-pagination", clickable:true }
 });
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
 <script>
-const lightbox = GLightbox({
-  selector: '.glightbox',
-  touchNavigation: true,
-  loop: true,
-  zoomable: true
+document.addEventListener("DOMContentLoaded", function(){
+  GLightbox({ selector:'.glightbox' });
 });
 </script>
 
 <script>
-function copyAccount(account) {
-  navigator.clipboard.writeText(account);
-  alert("계좌번호가 복사되었습니다 😊");
+function copyAccount(account){
+  if(navigator.clipboard){
+    navigator.clipboard.writeText(account)
+    .then(()=>alert("계좌번호가 복사되었습니다 😊"))
+    .catch(()=>alert("복사에 실패했습니다."));
+  } else {
+    alert("이 브라우저는 자동 복사를 지원하지 않습니다.");
+  }
 }
 </script>
 
 <script>
-Kakao.init('YOUR_JAVASCRIPT_KEY'); // 여기 키 넣기
+// 캘린더 자동 생성
+const year=2026;
+const month=4;
+const weddingDate=30;
 
-function shareKakao() {
-  Kakao.Link.sendDefault({
-    objectType: 'feed',
-    content: {
-      title: '저희 결혼합니다 💍',
-      description: '소중한 분들을 초대합니다.',
-      imageUrl: 'https://noondelight.github.io/wedding-invitation/photo/photo01.jpg',
-      link: {
-        mobileWebUrl: window.location.href,
-        webUrl: window.location.href,
-      },
-    },
-    buttons: [
-      {
-        title: '청첩장 보기',
-        link: {
-          mobileWebUrl: window.location.href,
-          webUrl: window.location.href,
-        },
-      },
-    ],
-  });
+const firstDay=new Date(year,month,1).getDay();
+const lastDate=new Date(year,month+1,0).getDate();
+
+const calendar=document.getElementById("calendar");
+const days=["일","월","화","수","목","금","토"];
+
+days.forEach(d=>{
+  const el=document.createElement("div");
+  el.innerHTML="<strong>"+d+"</strong>";
+  calendar.appendChild(el);
+});
+
+for(let i=0;i<firstDay;i++){
+  calendar.appendChild(document.createElement("div"));
+}
+
+for(let d=1;d<=lastDate;d++){
+  const el=document.createElement("div");
+  el.textContent=d;
+  if(d===weddingDate) el.classList.add("wedding-day");
+  calendar.appendChild(el);
 }
 </script>
 
