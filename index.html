@@ -20,9 +20,12 @@
 
 <style>
 :root{
-  --pink:#f5c7cf;
-  --ivory:#fdfaf7;
-  --text:#2e2e2e;
+  --mint-soft:#eaf7f3;
+  --mint-main:#cfeee6;
+  --mint-deep:#2f5d50;
+  --ivory:#fbfaf6;
+  --text:#2c2c2c;
+  --sub:#666;
 }
 
 *{box-sizing:border-box;}
@@ -32,11 +35,11 @@ body{
   font-family:'Pretendard', sans-serif;
   background:var(--ivory);
   color:var(--text);
-  line-height:1.7;
+  line-height:1.85;
 }
 
 section{
-  padding:80px 24px;
+  padding:120px 24px 90px;
   text-align:center;
 }
 
@@ -48,11 +51,7 @@ section{
 .hero{
   min-height:100vh;
   height:100svh;
-  background-color:#333;
-  background-image:url('photo/mainphoto.jpg');
-  background-position:center;
-  background-size:cover;
-  background-repeat:no-repeat;
+  background:url('photo/hero.jpg') center/cover no-repeat;
   display:flex;
   align-items:center;
   justify-content:center;
@@ -64,7 +63,7 @@ section{
   content:"";
   position:absolute;
   inset:0;
-  background:rgba(0,0,0,0.35);
+  background:rgba(0,0,0,0.4);
 }
 
 .hero-content{
@@ -74,73 +73,102 @@ section{
 
 .hero h1{
   font-family:'Playfair Display', serif;
-  font-size:30px;
-  margin-bottom:10px;
+  font-size:38px;
+  letter-spacing:3px;
+  margin-bottom:14px;
 }
 
 .section-title{
   font-family:'Playfair Display', serif;
-  font-size:22px;
-  margin-bottom:40px;
+  font-size:26px;
+  margin-bottom:60px;
 }
 
 .card{
   background:#fff;
-  border-radius:26px;
-  padding:36px 26px;
-  box-shadow:0 20px 45px rgba(0,0,0,0.06);
-  margin-bottom:24px;
+  border-radius:30px;
+  padding:50px 32px;
+  box-shadow:0 40px 80px rgba(0,0,0,0.04);
+  margin-bottom:36px;
+  position:relative;
 }
 
-.pink-section{
-  background:var(--pink);
+.card::before{
+  content:"";
+  display:block;
+  width:40px;
+  height:2px;
+  background:var(--mint-main);
+  margin:0 auto 20px;
 }
 
-.swiper{
-  width:100%;
+.mint-section{
+  background:var(--mint-soft);
 }
 
 .swiper img{
   width:100%;
-  border-radius:18px;
+  border-radius:22px;
 }
 
 .calendar{
   display:grid;
   grid-template-columns:repeat(7,1fr);
-  gap:8px;
+  gap:10px;
   font-size:13px;
-  margin-top:20px;
+  margin-top:25px;
 }
 
 .calendar div{
-  padding:8px 0;
+  padding:10px 0;
 }
 
 .wedding-day{
-  background:#000;
+  background:var(--mint-deep);
   color:#fff;
   border-radius:50%;
+  width:30px;
+  height:30px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin:auto;
+  font-weight:600;
 }
 
 .notice{
   font-size:14px;
-  color:#555;
-  margin-top:20px;
-  line-height:1.6;
+  color:var(--sub);
+  margin-top:30px;
+  line-height:1.8;
 }
 
 .btn{
   display:inline-block;
-  margin-top:16px;
-  padding:10px 20px;
-  border-radius:30px;
-  background:#000;
+  margin-top:22px;
+  padding:14px 34px;
+  border-radius:50px;
+  background:var(--mint-deep);
   color:#fff;
   font-size:13px;
+  letter-spacing:1px;
   text-decoration:none;
   border:none;
   cursor:pointer;
+  transition:all 0.3s ease;
+}
+
+.btn:hover{
+  background:#21453c;
+  transform:translateY(-3px);
+  box-shadow:0 10px 20px rgba(0,0,0,0.1);
+}
+
+#map{
+  width:100%;
+  height:300px;
+  border-radius:20px;
+  margin-top:20px;
 }
 </style>
 </head>
@@ -149,21 +177,20 @@ section{
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-content" data-aos="fade-up">
-    <h1>Namjoon & Harim</h1>
+  <div class="hero-content">
+    <h1>Namjun & Harim</h1>
     <p>2026.05.30 SAT 18:30</p>
-    <p>판교 W스퀘어웨딩홀</p>
   </div>
 </section>
 
 <!-- INVITATION -->
 <section>
   <div class="container">
-    <div class="section-title" data-aos="fade-up">Invitation</div>
-    <div class="card" data-aos="fade-up">
+    <div class="section-title">Invitation</div>
+    <div class="card">
       서로 다른 두 사람이 만나<br>
-      이제 하나의 길을 걸어가려 합니다.<br><br>
-      따뜻한 축복으로 함께해 주세요.
+      이제 하나의 길을 함께 걸어가려 합니다.<br><br>
+      소중한 걸음에 따뜻한 축복으로 함께해 주세요.
     </div>
   </div>
 </section>
@@ -171,37 +198,45 @@ section{
 <!-- GALLERY -->
 <section>
   <div class="container">
-    <div class="section-title" data-aos="fade-up">Gallery</div>
-
-    <div class="swiper" data-aos="fade-up">
+    <div class="section-title">Gallery</div>
+    <div class="swiper">
       <div class="swiper-wrapper">
-
         <div class="swiper-slide">
           <a href="photo/photo01.jpg" class="glightbox">
             <img src="photo/photo01.jpg" loading="lazy">
           </a>
         </div>
-
         <div class="swiper-slide">
           <a href="photo/photo02.jpg" class="glightbox">
             <img src="photo/photo02.jpg" loading="lazy">
           </a>
         </div>
-
       </div>
       <div class="swiper-pagination"></div>
     </div>
-
   </div>
 </section>
 
 <!-- CALENDAR -->
-<section class="pink-section">
+<section class="mint-section">
   <div class="container">
-    <div class="card" data-aos="fade-up">
+    <div class="card">
       <div class="section-title">2026.05</div>
       <div id="calendar" class="calendar"></div>
-      <p style="margin-top:20px;"></p>
+      <p style="margin-top:24px;">5월 30일 토요일 오후 6시 30분</p>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section>
+  <div class="container">
+    <div class="section-title">Location</div>
+    <div class="card">
+      서울시 ○○구 ○○로 123<br>
+      ○○웨딩홀 3층
+      <div id="map"></div>
+      <a href="https://map.kakao.com" target="_blank" class="btn">카카오 지도에서 보기</a>
     </div>
   </div>
 </section>
@@ -209,89 +244,79 @@ section{
 <!-- ACCOUNT -->
 <section>
   <div class="container">
-    <div class="section-title" data-aos="fade-up">Account</div>
+    <div class="section-title">Account</div>
 
-    <div class="card" data-aos="fade-up">
+    <div class="card">
       <strong>신랑 측</strong><br>
       국민은행 123-456-789012<br>
-      <button class="btn" onclick="copyAccount('123-456-789012')">
-        계좌 복사
-      </button>
+      <button class="btn" onclick="copyAccount('123-456-789012')">계좌 복사</button>
     </div>
 
-    <div class="card" data-aos="fade-up">
+    <div class="card">
       <strong>신부 측</strong><br>
       신한은행 987-654-321000<br>
-      <button class="btn" onclick="copyAccount('987-654-321000')">
-        계좌 복사
-      </button>
+      <button class="btn" onclick="copyAccount('987-654-321000')">계좌 복사</button>
     </div>
 
-    <div class="notice" data-aos="fade-up">
-      마음만으로도 충분히 감사드립니다.<br>
-      정중한 마음으로 화환은 사양하겠습니다.
+    <div class="notice">
+      보내주시는 따뜻한 마음만으로도 충분히 감사드립니다.<br>
+      축하 화환은 정중히 사양하겠습니다.
     </div>
 
+    <button class="btn" onclick="copyURL()">청첩장 주소 복사하기</button>
   </div>
 </section>
 
 <!-- JS -->
 
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script>
-AOS.init({ duration:1000, once:true });
-</script>
-
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
-new Swiper(".swiper",{
-  loop:true,
-  spaceBetween:20,
-  pagination:{ el:".swiper-pagination", clickable:true }
-});
+new Swiper(".swiper",{ loop:true, spaceBetween:20, pagination:{ el:".swiper-pagination", clickable:true }});
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+<script>GLightbox({ selector:'.glightbox' });</script>
+
+<!-- 카카오 지도 API -->
+<script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey='41c76de12d0ee46243227982e1372e89'"></script>
 <script>
-document.addEventListener("DOMContentLoaded", function(){
-  GLightbox({ selector:'.glightbox' });
+var container = document.getElementById('map');
+var options = {
+  center: new kakao.maps.LatLng(37.5665, 126.9780),
+  level: 3
+};
+
+var map = new kakao.maps.Map(container, options);
+
+var marker = new kakao.maps.Marker({
+  position: new kakao.maps.LatLng(37.5665, 126.9780)
 });
+marker.setMap(map);
 </script>
 
 <script>
 function copyAccount(account){
-  if(navigator.clipboard){
-    navigator.clipboard.writeText(account)
-    .then(()=>alert("계좌번호가 복사되었습니다 😊"))
-    .catch(()=>alert("복사에 실패했습니다."));
-  } else {
-    alert("이 브라우저는 자동 복사를 지원하지 않습니다.");
-  }
+  navigator.clipboard.writeText(account)
+  .then(()=>alert("계좌번호가 복사되었습니다 😊"));
+}
+
+function copyURL(){
+  navigator.clipboard.writeText(window.location.href)
+  .then(()=>alert("청첩장 주소가 복사되었습니다 😊"));
 }
 </script>
 
 <script>
-// 캘린더 자동 생성
-const year=2026;
-const month=4;
-const weddingDate=30;
-
+const year=2026, month=4, weddingDate=30;
 const firstDay=new Date(year,month,1).getDay();
 const lastDate=new Date(year,month+1,0).getDate();
-
 const calendar=document.getElementById("calendar");
-const days=["일","월","화","수","목","금","토"];
-
-days.forEach(d=>{
+["일","월","화","수","목","금","토"].forEach(d=>{
   const el=document.createElement("div");
   el.innerHTML="<strong>"+d+"</strong>";
   calendar.appendChild(el);
 });
-
-for(let i=0;i<firstDay;i++){
-  calendar.appendChild(document.createElement("div"));
-}
-
+for(let i=0;i<firstDay;i++) calendar.appendChild(document.createElement("div"));
 for(let d=1;d<=lastDate;d++){
   const el=document.createElement("div");
   el.textContent=d;
