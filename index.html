@@ -54,11 +54,7 @@ body{
   font-size: 20px;
 }
 
-section + section {
-  border-top: 1px solid rgba(0,0,0,0.04);
-}
-
-.section{
+section{
   padding:100px 24px 70px;
   text-align:center;
 }
@@ -176,7 +172,7 @@ section + section {
   margin-left: 10px;
   white-space: nowrap;
 }
-  
+
 .card::before{
   content:"";
   display:block;
@@ -244,33 +240,12 @@ section + section {
   box-shadow:0 8px 15px rgba(0,0,0,0.1);
 }
 
-#map {
-  width: 100%;
-  height: 300px;
-  border-radius: 20px;
-  margin-top: 20px;
+#map{
+  width:100%;
+  height:300px;
+  border-radius:20px;
+  margin-top:20px;
 }
-
-.map-btns {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  margin-top: 20px;
-}
-
-.map-btn {
-  padding: 12px 0;
-  border-radius: 50px;
-  font-size: 13px;
-  font-weight: 600;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.map-btn.kakao { background: #FEE500; color: #3C1E1E; }
-.map-btn.naver { background: #03C75A; color: #fff; }
 
 .gallery-grid{
   display:grid;
@@ -353,25 +328,15 @@ section + section {
 </section>
 
 <section>
-  <div class="container">
-    <div class="section-title" data-aos="fade-up">Location</div>
-    <div class="card" data-aos="fade-up">
-      <strong>W스퀘어컨벤션 8층</strong><br>
-      <span style="font-size:14px; color:#666;">경기도 성남시 분당구 판교역로226번길 16</span>
-      
-      <div id="map"></div>
-      
-      <div style="margin-top: 25px; text-align: left; font-size: 14px; border-top: 1px solid #eee; padding-top: 15px;">
-        <p style="margin: 5px 0;"><strong>🚇 지하철:</strong> 판교역 1번 출구 도보 5분</p>
-        <p style="margin: 5px 0;"><strong>🚗 주차:</strong> 건물 내 지하주차장 2시간 무료</p>
-      </div>
-
-      <div class="map-btns">
-        <a href="https://map.kakao.com/link/to/W스퀘어컨벤션,37.400815926297,127.11143462192" target="_blank" class="map-btn kakao">카카오맵</a>
-        <a href="https://map.naver.com/v5/search/W스퀘어컨벤션" target="_blank" class="map-btn naver">네이버지도</a>
-      </div>
-    </div>
-  </div>
+  <div class="container">
+    <div class="section-title" data-aos="fade-up">Location</div>
+    <div class="card" data-aos="fade-up">
+      <strong>W스퀘어컨벤션 8층</strong><br>
+      <span style="font-size:14px; color:#666;">경기도 성남시 분당구 판교역로226번길 16</span>
+      <div id="map"></div>
+      <a href="https://map.kakao.com/?q=경기도%20성남시%20분당구%20판교역로226번길%2016" target="_blank" class="btn">카카오 지도에서 보기</a>
+    </div>
+  </div>
 </section>
 
 <section class="mint-section">
