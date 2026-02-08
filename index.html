@@ -6,7 +6,7 @@
 <title>김남준 ♥ 정하림 결혼합니다</title>
 
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://your-wedding-url.com"> 
+<meta property="og:url" content="https://noondelight.github.io/wedding-invitation/"> 
 <meta property="og:title" content="김남준 ♥ 정하림 결혼합니다">
 <meta property="og:description" content="2026년 5월 30일 토요일 오후 6시 30분, 소중한 분들을 초대합니다.">
 <meta property="og:image" content="photo/hero.jpg"> 
@@ -37,7 +37,7 @@ body {
   overflow-x: hidden;
 }
 
-/* 4. 섹션 사이 디바이더 */
+/* 섹션 사이 얇은 디바이더 추가 */
 section + section {
   border-top: 1px solid rgba(0,0,0,0.04);
 }
@@ -52,7 +52,6 @@ section {
   margin: auto;
 }
 
-/* 히로 섹션 */
 .hero {
   min-height: 100vh;
   height: 100svh;
@@ -100,7 +99,16 @@ section {
   position: relative;
 }
 
-/* 음악 버튼 */
+/* 문구 상단 민트 포인트 라인 복구 */
+.card::before {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: var(--mint-main);
+  margin: 0 auto 20px;
+}
+
 .music-control {
   position: fixed;
   top: 20px;
@@ -119,7 +127,6 @@ section {
   font-size: 20px;
 }
 
-/* 갤러리 */
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -135,7 +142,6 @@ section {
   transition: transform 0.3s;
 }
 
-/* 지도 및 교통 안내 */
 #map {
   width: 100%;
   height: 300px;
@@ -164,7 +170,6 @@ section {
 .map-btn.kakao { background: #FEE500; color: #3C1E1E; }
 .map-btn.naver { background: #03C75A; color: #fff; }
 
-/* 아코디언 및 계좌 */
 .accordion-btn {
   background-color: var(--mint-soft);
   color: var(--text);
@@ -185,25 +190,32 @@ section {
   transition: max-height 0.3s ease-out;
 }
 
+/* 계좌 정보 내부 흰색 박스 디자인 복구 */
+.account-card-inner {
+  background: #fff;
+  border-radius: 20px;
+  padding: 5px 20px;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
 .account-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15px 0;
-  border-bottom: 1px solid #eee;
 }
 
 .copy-btn-small {
   background: var(--mint-deep);
   color: white;
   border: none;
-  padding: 5px 12px;
+  padding: 6px 14px;
   border-radius: 20px;
   font-size: 11px;
   cursor: pointer;
 }
 
-/* 공유하기 버튼 */
 .share-btn {
   width: 100%;
   padding: 16px;
@@ -220,13 +232,12 @@ section {
   gap: 8px;
 }
 
-/* 토스트 메시지 */
 .toast {
   position: fixed;
   bottom: 50px;
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(47, 93, 80, 0.9);
+  background: rgba(47, 93, 80, 0.95);
   color: white;
   padding: 12px 24px;
   border-radius: 30px;
@@ -238,7 +249,6 @@ section {
 @keyframes fadeInUp { from { opacity: 0; transform: translate(-50%, 20px); } to { opacity: 1; transform: translate(-50%, 0); } }
 @keyframes fadeOut { from { opacity: 1; transform: translate(-50%, 0); } to { opacity: 0; transform: translate(-50%, -10px); } }
 
-/* 달력 */
 .calendar { display: grid; grid-template-columns: repeat(7, 1fr); gap: 10px; font-size: 13px; margin-top: 25px; }
 .wedding-day { background: var(--mint-deep); color: #fff; border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; margin: auto; }
 </style>
@@ -327,26 +337,30 @@ section {
 <section style="background:var(--mint-soft);">
   <div class="container">
     <div class="section-title" data-aos="fade-up">Account</div>
-    <div class="notice" style="margin-bottom: 20px; font-size: 14px; color: var(--sub);">
+    <div class="notice" style="margin-bottom: 25px; font-size: 14px; color: var(--sub);">
       보내주시는 화환은 정중히 사양하겠습니다.<br>따뜻한 마음만으로도 충분히 감사드립니다.
     </div>
 
     <div data-aos="fade-up">
       <button class="accordion-btn">신랑측 마음 전하실 곳 <span>∨</span></button>
       <div class="accordion-content">
-        <div class="account-row">
-          <div style="text-align:left;"><span style="font-size:12px; color:#888;">국민은행 (신랑 김남준)</span><br><strong>123-456-789012</strong></div>
-          <button class="copy-btn-small" onclick="copyAccount('123-456-789012')">복사</button>
+        <div class="account-card-inner">
+          <div class="account-row">
+            <div><span style="font-size:12px; color:#888;">국민은행 (신랑 김남준)</span><br><strong>123-456-789012</strong></div>
+            <button class="copy-btn-small" onclick="copyAccount('123-456-789012')">복사</button>
+          </div>
         </div>
       </div>
     </div>
 
-    <div data-aos="fade-up" style="margin-top:10px;">
+    <div data-aos="fade-up" style="margin-top:12px;">
       <button class="accordion-btn">신부측 마음 전하실 곳 <span>∨</span></button>
       <div class="accordion-content">
-        <div class="account-row">
-          <div style="text-align:left;"><span style="font-size:12px; color:#888;">신한은행 (신부 정하림)</span><br><strong>987-654-321000</strong></div>
-          <button class="copy-btn-small" onclick="copyAccount('987-654-321000')">복사</button>
+        <div class="account-card-inner">
+          <div class="account-row">
+            <div><span style="font-size:12px; color:#888;">신한은행 (신부 정하림)</span><br><strong>987-654-321000</strong></div>
+            <button class="copy-btn-small" onclick="copyAccount('987-654-321000')">복사</button>
+          </div>
         </div>
       </div>
     </div>
@@ -368,11 +382,11 @@ section {
 <script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=41c76de12d0ee46243227982e1372e89&autoload=false"></script>
 
 <script>
-  // 초기화
+  // 라이브러리 초기화
   AOS.init({ duration: 1000, once: true });
   GLightbox({ selector:'.glightbox', loop:true });
 
-  // 1. 계좌 복사 UX (토스트 메시지)
+  // 토스트 메시지 알림 (alert 대체)
   function showToast(msg) {
     const oldToast = document.querySelector('.toast');
     if (oldToast) oldToast.remove();
@@ -380,14 +394,15 @@ section {
     toast.className = "toast";
     toast.innerText = msg;
     document.body.appendChild(toast);
-    setTimeout(() => toast.remove(), 2000);
+    setTimeout(() => { if(toast) toast.remove(); }, 2000);
   }
 
+  // 계좌 복사
   function copyAccount(acc) {
     navigator.clipboard.writeText(acc).then(() => showToast("계좌번호가 복사되었습니다. 😊"));
   }
 
-  // 공유하기 기능 (Web Share API)
+  // 스마트 공유하기 (Web Share API)
   async function shareWedding() {
     const shareData = {
       title: '김남준 ♥ 정하림 결혼합니다',
@@ -395,7 +410,7 @@ section {
       url: window.location.href
     };
     if (navigator.share) {
-      try { await navigator.share(shareData); } catch (e) { console.log(e); }
+      try { await navigator.share(shareData); } catch (e) { console.log('공유 취소'); }
     } else {
       navigator.clipboard.writeText(window.location.href).then(() => showToast("주소가 복사되었습니다. 😊"));
     }
@@ -406,7 +421,7 @@ section {
   const bgm = document.getElementById('bgm');
   let isPlaying = false;
   document.body.addEventListener('click', () => {
-    if(!isPlaying) { bgm.play(); isPlaying = true; musicBtn.innerText = '💿'; }
+    if(!isPlaying) { bgm.play().then(() => { isPlaying = true; musicBtn.innerText = '💿'; }).catch(e => console.log('재생 대기')); }
   }, { once: true });
   musicBtn.addEventListener('click', (e) => {
     e.stopPropagation();
@@ -415,7 +430,7 @@ section {
     isPlaying = !isPlaying;
   });
 
-  // 아코디언
+  // 아코디언 기능
   var acc = document.getElementsByClassName("accordion-btn");
   for (var i = 0; i < acc.length; i++) {
     acc[i].addEventListener("click", function() {
@@ -430,24 +445,25 @@ section {
     });
   }
 
-  // 디데이 & 달력
+  // 디데이 계산
   const weddingDate = new Date("2026-05-30T00:00:00");
   const today = new Date(); today.setHours(0,0,0,0);
   const diffDay = Math.ceil((weddingDate - today) / (1000*60*60*24));
   document.getElementById("d-day-count").innerText = diffDay > 0 ? "D - " + diffDay : (diffDay === 0 ? "Today" : "");
 
+  // 2026년 5월 달력 (금요일 시작)
   const calendar=document.getElementById("calendar");
   ["일","월","화","수","목","금","토"].forEach(d=> {
     const el=document.createElement("div"); el.innerHTML="<strong>"+d+"</strong>"; calendar.appendChild(el);
   });
-  for(let i=0;i<5;i++) calendar.appendChild(document.createElement("div")); // 2026년 5월 1일 금요일
+  for(let i=0;i<5;i++) calendar.appendChild(document.createElement("div")); // 금요일 시작
   for(let d=1;d<=31;d++){
     const el=document.createElement("div"); el.textContent=d;
     if(d===30) el.classList.add("wedding-day");
     calendar.appendChild(el);
   }
 
-  // 카카오 지도
+  // 카카오 지도 로드
   kakao.maps.load(function() {
     var container = document.getElementById('map');
     var options = { center: new kakao.maps.LatLng(37.400815926297, 127.11143462192), level: 4 };
