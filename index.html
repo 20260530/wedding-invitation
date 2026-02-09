@@ -64,7 +64,7 @@ section{ padding: 80px 20px; text-align:center; }
 .gallery-grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:8px; }
 .gallery-grid img{ width:100%; aspect-ratio: 1/1; object-fit:cover; border-radius:8px; }
 .calendar{ display:grid; grid-template-columns:repeat(7,1fr); gap:5px; font-size:14px; margin-top:20px; font-family: var(--font-serif); }
-.wedding-day{ background:var(--mint-deep); color:#fff !important; border-radius:50%; width:30px; height:30px; display:flex; align-items:center; justify-content:center; margin:auto; }
+.wedding-day{ background:var(--mint-deep); color:#fff !important; border-radius:50%; width:30px; height:30px; display:flex; align-items:center; justify-content:center; margin:auto; font-weight:bold;}
 
 /* 지도 및 길찾기 버튼 */
 #map { width:100%; height:250px; border-radius:15px; margin-top:15px; border:1px solid #eee; }
@@ -77,7 +77,7 @@ section{ padding: 80px 20px; text-align:center; }
 /* 계좌번호 아코디언 */
 .accordion-btn {
   background: #eaf7f3; padding: 15px 20px; width: 100%; border: none; text-align: left;
-  font-size: 15px; font-weight: 600; border-radius: 12px; display: flex; justify-content: space-between; margin-bottom: 10px;
+  font-size: 15px; font-weight: 600; border-radius: 12px; display: flex; justify-content: space-between; margin-bottom: 10px; cursor: pointer;
 }
 .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
 .account-box { background: #fff; border: 1px solid #eee; padding: 15px; border-radius: 12px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
@@ -153,7 +153,7 @@ footer { padding: 50px 20px; text-align: center; color: #aaa; font-size: 12px; f
       
       <div class="map-btns">
         <a href="https://map.kakao.com/link/to/W스퀘어컨벤션,37.4008159,127.1114346" target="_blank" class="map-btn btn-kakao">카카오맵</a>
-        <a href="https://map.naver.com/v5/search/W스퀘어컨벤션" target="_blank" class="map-btn btn-naver">네이버지도</a>
+        <a href="https://map.naver.com/v5/search/W스퀘어컨벤션판" target="_blank" class="map-btn btn-naver">네이버지도</a>
         <a href="https://map.tmap.co.kr/s/W스퀘어컨벤션판교" target="_blank" class="map-btn btn-tmap">티맵</a>
       </div>
     </div>
@@ -163,6 +163,7 @@ footer { padding: 50px 20px; text-align: center; color: #aaa; font-size: 12px; f
 <section>
   <div class="container">
     <div class="section-title" data-aos="fade-up">Account</div>
+    <p data-aos="fade-up" style="font-size:14px; color:var(--sub); margin-bottom:30px; font-family: 'Pretendard', sans-serif;">화환은 정중히 사양합니다.</p>
     <button class="accordion-btn">신랑측 계좌번호 <span>∨</span></button>
     <div class="accordion-content">
         <div class="account-box"><div><span style="font-size:12px; color:#888">국민은행</span><br><strong>123-456-789012</strong></div><button class="copy-btn" onclick="copyAccount('123-456-789012')">복사</button></div>
@@ -179,6 +180,8 @@ footer { padding: 50px 20px; text-align: center; color: #aaa; font-size: 12px; f
   </div>
 </section>
 
+<footer>Copyright 2026. Namjoon & Harim.</footer>
+
 <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=41c76de12d0ee46243227982e1372e89&autoload=false"></script>
@@ -192,21 +195,7 @@ footer { padding: 50px 20px; text-align: center; color: #aaa; font-size: 12px; f
       requestUrl: 'https://noondelight.github.io/wedding-invitation/', // 여기에 공유할 실제 URL을 입력하세요.
     });
   }
-  // // 1. 카카오 SDK 초기화 (안전하게 로드 확인 후 실행)
-  // window.onload = function() {
-  //   if (window.Kakao) {
-  //     if (!Kakao.isInitialized()) {
-  //       try {
-  //         // 여기에 고객님의 [JavaScript 키]를 넣으세요
-  //         Kakao.init('41c76de12d0ee46243227982e1372e89');
-  //         console.log("카카오 초기화 완료:", Kakao.isInitialized());
-  //       } catch (e) {
-  //         console.error("카카오 초기화 중 에러 발생:", e);
-  //       }
-  //     }
-  //   }
-  // };
-
+        
   AOS.init({ duration: 1000, once: true });
   GLightbox({ selector: '.glightbox' });
 
@@ -216,24 +205,6 @@ footer { padding: 50px 20px; text-align: center; color: #aaa; font-size: 12px; f
   }
   function copyAccount(acc) { copyToClipboard(acc, "계좌번호가 복사되었습니다. 😊"); }
   function copyUrl() { copyToClipboard(window.location.href, "주소가 복사되었습니다. 🔗"); }
-
-  // function shareKakao() {
-  //   if (!window.Kakao || !Kakao.isInitialized()) {
-  //     alert('카카오톡 초기화에 실패했습니다. 카카오 개발자 센터에서 [도메인 등록]이 되었는지 확인해 주세요!');
-  //     return;
-  //   }
-  //   const url = window.location.href;
-  //   Kakao.Share.sendDefault({
-  //     objectType: 'feed',
-  //     content: {
-  //       title: '김남준 ♥ 정하림 결혼합니다',
-  //       description: '2026.05.30(토) 오후 6:30 판교 W스퀘어컨벤션',
-  //       imageUrl: 'https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1000', 
-  //       link: { mobileWebUrl: url, webUrl: url },
-  //     },
-  //     buttons: [{ title: '청첩장 보기', link: { mobileWebUrl: url, webUrl: url } }]
-  //   });
-  // }
 
   // 아코디언 로직
   const acc = document.getElementsByClassName("accordion-btn");
@@ -263,6 +234,7 @@ footer { padding: 50px 20px; text-align: center; color: #aaa; font-size: 12px; f
 </script>
 </body>
 </html>
+
 
 
 
