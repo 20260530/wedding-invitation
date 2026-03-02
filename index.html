@@ -72,7 +72,12 @@ section{ padding: 80px 20px; text-align:center; }
 .map-btn { padding: 12px 0; border-radius: 10px; font-size: 12px; font-weight: 600; text-decoration: none; display: flex; align-items: center; justify-content: center; color: #fff; font-family: 'Pretendard'; }
 .btn-kakao { background: var(--kakao-yellow); color: #3c1e1e; }
 .btn-naver { background: var(--naver-green); }
-.btn-tmap { background: var(--tmap-blue); }
+.btn-tmap { background: var(--tmap-blue); }        
+.transport-info { text-align: left; margin-top: 25px; padding-top: 20px; border-top: 1px solid #eee; font-size: 14px; color: #555; }
+.transport-item { margin-bottom: 15px; display: flex; }
+.transport-icon { margin-right: 10px; font-size: 18px; }
+.transport-desc strong { display: block; color: var(--text); margin-bottom: 4px; }
+
 
 /* 계좌번호 아코디언 */
 .accordion-btn {
@@ -189,6 +194,25 @@ footer { padding: 50px 20px; text-align: center; color: #aaa; font-size: 12px; f
         <a href="https://map.naver.com/v5/search/W스퀘어컨벤션" target="_blank" class="map-btn btn-naver">네이버지도</a>
         <a href="https://tmap.life/8cd93bb6" target="_blank" class="map-btn btn-tmap">티맵</a>
       </div>
+
+      <div class="transport-info">
+        <div class="transport-item">
+            <div class="transport-icon">🚇</div>
+            <div class="transport-desc">
+                <strong>지하철 안내</strong>
+                신분당선/경강선 판교역 1번 출구 도보 약 10분<br>
+                (판교역 북편 버스정류장에서 셔틀버스 운행)
+            </div>
+        </div>
+        <div class="transport-item">
+            <div class="transport-icon">🚗</div>
+            <div class="transport-desc">
+                <strong>주차 안내</strong>
+                W스퀘어컨벤션 건물 내 지하주차장 이용 (2시간 무료)
+            </div>
+        </div>
+              
+      </div>
     </div>
   </div>
 </section>
@@ -271,6 +295,7 @@ footer { padding: 50px 20px; text-align: center; color: #aaa; font-size: 12px; f
 </script>
 </body>
 </html>
+
 
 
 
