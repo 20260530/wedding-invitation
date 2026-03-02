@@ -45,7 +45,7 @@ section{ padding: 80px 20px; text-align:center; }
 
 /* 히어로 섹션 */
 .hero-section { padding: 0; background: #fff; }
-.hero-image { width: 100%; height: auto; display: block; }
+.hero-image { width: 100%; height: auto; display: block; max-width: 480px; margin: 0 auto;}
 .hero-info-box {
   background: #fff; padding: 40px 20px 50px; text-align: center; color: var(--text-serif);
   box-shadow: 0 10px 20px rgba(0,0,0,0.03);
@@ -56,7 +56,7 @@ section{ padding: 80px 20px; text-align:center; }
 
 .section-title{ font-family: var(--font-serif); font-size: 26px; margin-bottom:40px; color: var(--text-serif); font-weight: 700; }
 .card{
-  background:#fff; border-radius:24px; padding:35px 25px; box-shadow:0 10px 30px rgba(0,0,0,0.05);
+  background:#fff; border-radius:24px; padding:45px 30px; line-height: 2.2; box-shadow:0 4px 12px rgba(0,0,0,0.04);
   margin-bottom:20px; font-family: var(--font-serif); color: var(--text-serif); line-height: 2;
 }
 
@@ -85,7 +85,7 @@ section{ padding: 80px 20px; text-align:center; }
   font-size: 15px; font-weight: 600; border-radius: 12px; display: flex; justify-content: space-between; margin-bottom: 10px; cursor: pointer;
 }
 .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
-.account-box { background: #fff; border: 1px solid #eee; padding: 15px; border-radius: 12px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
+.account-box { background: #fff; border: 1px solid #eee; padding: 15px 15px 15px 5px; border-radius: 12px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
 .copy-btn { background: var(--mint-soft); color: var(--mint-deep); border: none; padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; cursor: pointer; }
 
 /* 공유하기 버튼 */
@@ -120,7 +120,8 @@ footer { padding: 50px 20px; text-align: center; color: #aaa; font-size: 12px; f
   <div class="container">
     <div class="section-title" data-aos="fade-up">초대장</div>
     <div class="card" data-aos="fade-up">
-      “너희도 성령 안에서 하나님이 거하실 처소가 되기 위하여<br>
+      “너희도 성령 안에서<br> 
+        하나님이 거하실 처소가 되기 위하여<br>
 그리스도 예수 안에서 함께 지어져 가느니라”<br>
 (에베소서 2:22)<br>
 <br>
@@ -201,14 +202,14 @@ footer { padding: 50px 20px; text-align: center; color: #aaa; font-size: 12px; f
             <div class="transport-desc">
                 <strong>지하철 안내</strong>
                 신분당선/경강선 판교역 1번 출구 도보 약 10분<br>
-                (판교역 북편 버스정류장에서 셔틀버스 운행)
+                (판교역 북편 버스정류장에서 셔틀버스 10분 간격 운행)
             </div>
         </div>
         <div class="transport-item">
             <div class="transport-icon">🚗</div>
             <div class="transport-desc">
                 <strong>주차 안내</strong>
-                W스퀘어컨벤션 건물 내 지하주차장 이용 (2시간 무료)
+                W스퀘어컨벤션 건물 내 주차장 이용 (2시간 무료)
             </div>
         </div>
               
@@ -223,15 +224,15 @@ footer { padding: 50px 20px; text-align: center; color: #aaa; font-size: 12px; f
     <p data-aos="fade-up" style="font-size:14px; color:var(--sub); margin-bottom:30px; font-family: 'Pretendard', sans-serif;">화환은 정중히 사양합니다.</p>
     <button class="accordion-btn">신랑측 계좌번호 <span>∨</span></button>
     <div class="accordion-content">
-        <div class="account-box"><div><span style="font-size:12px; color:#888">김남준 카카오뱅크</span><br><strong>3333-11-3669223</strong></div><button class="copy-btn" onclick="copyAccount('3333-11-3669223')">복사</button></div>
-        <div class="account-box"><div><span style="font-size:12px; color:#888">김남준 카카오뱅크</span><br><strong>3333-11-3669223</strong></div><button class="copy-btn" onclick="copyAccount('123-456-789012')">복사</button></div>
-        <div class="account-box"><div><span style="font-size:12px; color:#888">김남준 카카오뱅크</span><br><strong>3333-11-3669223</strong></div><button class="copy-btn" onclick="copyAccount('123-456-789012')">복사</button></div>
+        <div class="account-box"><div><span style="font-size:13px; color:#888">김남준 카카오뱅크</span><br><strong>3333-11-3669223</strong></div><button class="copy-btn" onclick="copyAccount('3333-11-3669223')">복사</button></div>
+        <div class="account-box"><div><span style="font-size:13px; color:#888">김남준 카카오뱅크</span><br><strong>3333-11-3669223</strong></div><button class="copy-btn" onclick="copyAccount('123-456-789012')">복사</button></div>
+        <div class="account-box"><div><span style="font-size:13px; color:#888">김남준 카카오뱅크</span><br><strong>3333-11-3669223</strong></div><button class="copy-btn" onclick="copyAccount('123-456-789012')">복사</button></div>
     </div>
     <button class="accordion-btn" style="margin-top:10px">신부측 계좌번호 <span>∨</span></button>
     <div class="accordion-content">
-        <div class="account-box"><div><span style="font-size:12px; color:#888">정하림 신한은행</span><br><strong>987-654-321000</strong></div><button class="copy-btn" onclick="copyAccount('987-654-321000')">복사</button></div>
-        <div class="account-box"><div><span style="font-size:12px; color:#888">김남준 카카오뱅크</span><br><strong>3333-11-3669223</strong></div><button class="copy-btn" onclick="copyAccount('123-456-789012')">복사</button></div>
-        <div class="account-box"><div><span style="font-size:12px; color:#888">김남준 카카오뱅크</span><br><strong>3333-11-3669223</strong></div><button class="copy-btn" onclick="copyAccount('123-456-789012')">복사</button></div>
+        <div class="account-box"><div><span style="font-size:13px; color:#888">정하림 신한은행</span><br><strong>987-654-321000</strong></div><button class="copy-btn" onclick="copyAccount('987-654-321000')">복사</button></div>
+        <div class="account-box"><div><span style="font-size:13px; color:#888">김남준 카카오뱅크</span><br><strong>3333-11-3669223</strong></div><button class="copy-btn" onclick="copyAccount('123-456-789012')">복사</button></div>
+        <div class="account-box"><div><span style="font-size:13px; color:#888">김남준 카카오뱅크</span><br><strong>3333-11-3669223</strong></div><button class="copy-btn" onclick="copyAccount('123-456-789012')">복사</button></div>
     </div>
 
     <div class="share-buttons-wrap" data-aos="fade-up">
@@ -290,11 +291,25 @@ footer { padding: 50px 20px; text-align: center; color: #aaa; font-size: 12px; f
   const startDay = new Date(2026, 4, 1).getDay();
   for(let i=0; i<startDay; i++) cal.innerHTML += `<div></div>`;
   for(let d=1; d<=31; d++){ cal.innerHTML += `<div ${d===30?'class="wedding-day"':''}>${d}</div>`; }
-  const dday = Math.ceil((new Date("2026-05-30") - new Date().setHours(0,0,0,0)) / (1000*60*60*24));
-  document.getElementById("d-day-count").innerText = dday > 0 ? dday : "Today";
+const today = new Date(); today.setHours(0,0,0,0);
+const target = new Date("2026-05-30");
+const dday = Math.floor((target - today) / (1000*60*60*24));
+document.getElementById("d-day-count").innerText = dday > 0 ? dday : "Today";
+
+  // bgm 버튼 작동
+const bgm = document.getElementById("bgm");
+const musicBtn = document.getElementById("musicBtn");
+let isPlaying = false;
+musicBtn.addEventListener("click", () => {
+  if (isPlaying) { bgm.pause(); musicBtn.innerText = "🔇"; } 
+  else { bgm.play(); musicBtn.innerText = "🔊"; }
+  isPlaying = !isPlaying;
+});
+        
 </script>
 </body>
 </html>
+
 
 
 
