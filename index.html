@@ -46,10 +46,7 @@ section{ padding: 80px 20px; text-align:center; }
 /* 히어로 섹션 */
 .hero-section { padding: 0; background: #fff; }
 .hero-image { width: 100%; height: auto; display: block; max-width: 480px; margin: 0 auto;}
-.hero-info-box {
-  background: #fff; padding: 40px 20px 50px; text-align: center; color: var(--text-serif);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.03);
-}
+.hero-info-box { background: #fff; padding: 40px 20px 50px; text-align: center; color: var(--text-serif); box-shadow: 0 10px 20px rgba(0,0,0,0.03); }
 .hero-names { font-family: var(--font-serif); font-size: 32px; font-weight: 700; margin-bottom: 25px; }
 .name-divider { margin: 0 15px; font-weight: 300; color: #ccc; }
 .hero-date-loc { font-family: var(--font-serif); font-size: 15px; color: #777; }
@@ -85,7 +82,7 @@ section{ padding: 80px 20px; text-align:center; }
   font-size: 15px; font-weight: 600; border-radius: 12px; display: flex; justify-content: space-between; margin-bottom: 10px; cursor: pointer;
 }
 .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
-.account-box { background: #fff; border: 1px solid #eee; padding: 15px 15px 15px 5px; border-radius: 12px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
+.account-box { background: #fff; border: 1px solid #eee; padding: 15px; border-radius: 12px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
 .copy-btn { background: var(--mint-soft); color: var(--mint-deep); border: none; padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; cursor: pointer; }
 
 /* 공유하기 버튼 */
@@ -202,7 +199,7 @@ footer { padding: 50px 20px; text-align: center; color: #aaa; font-size: 12px; f
             <div class="transport-desc">
                 <strong>지하철 안내</strong>
                 신분당선/경강선 판교역 1번 출구 도보 약 10분<br>
-                (판교역 북편 버스정류장에서 셔틀버스 10분 간격 운행)
+                (판교역 북편 버스정류장 셔틀버스 10분 간격 운행)
             </div>
         </div>
         <div class="transport-item">
@@ -265,8 +262,8 @@ footer { padding: 50px 20px; text-align: center; color: #aaa; font-size: 12px; f
     const ta = document.createElement("textarea"); ta.value = text; document.body.appendChild(ta); ta.select();
     document.execCommand('copy'); document.body.removeChild(ta); alert(msg);
   }
-  function copyAccount(acc) { copyToClipboard(acc, "계좌번호가 복사되었습니다. 😊"); }
-  function copyUrl() { copyToClipboard(window.location.href, "주소가 복사되었습니다. 🔗"); }
+  function copyAccount(acc) { copyToClipboard(acc, "계좌번호가 복사되었습니다."); }
+  function copyUrl() { copyToClipboard(window.location.href, "주소가 복사되었습니다."); }
 
   // 아코디언 로직
   const acc = document.getElementsByClassName("accordion-btn");
@@ -309,6 +306,7 @@ musicBtn.addEventListener("click", () => {
 </script>
 </body>
 </html>
+
 
 
 
