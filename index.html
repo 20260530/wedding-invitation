@@ -95,11 +95,16 @@ section{ padding: 50px 20px; text-align:center; }
 .btn-kakao-share { background: var(--kakao-yellow); color: #3b1e1e; }
 
 footer { padding: 50px 20px; text-align: center; color: #aaa; font-size: 12px; font-family: var(--font-serif); }
+
+#intro{position:fixed;inset:0;background:#fffaf7;display:flex;justify-content:center;align-items:center;overflow:hidden;z-index:9999;animation:o .5s 2s forwards} .t{font:34px 'Noto Serif KR',serif;letter-spacing:6px;color:#6e5b52;opacity:0;transform:translateY(20px);animation:u .7s .2s forwards} .p{position:absolute;top:-10px;width:8px;height:8px;background:#f6cbd3;border-radius:70% 70% 70% 0;opacity:.8;animation:f linear infinite} @keyframes u{to{opacity:1;transform:translateY(0)}} @keyframes f{ 0%{transform:translate(0,0) rotate(0)} 50%{transform:translate(15px,50vh) rotate(180deg)} 100%{transform:translate(-15px,110vh) rotate(360deg)} } @keyframes o{to{opacity:0;visibility:hidden}}
+        
 </style>
 </head>
 
 <body>
 
+<div id=intro><div class=t>초대합니다</div></div>
+        
 <button id="musicBtn" class="music-control">🔇</button>
 <audio id="bgm" loop><source src="music/bgm.mp3" type="audio/mp3"></audio>
 
@@ -196,14 +201,15 @@ footer { padding: 50px 20px; text-align: center; color: #aaa; font-size: 12px; f
             <div class="transport-desc">
                 <strong>지하철 안내</strong>
                 신분당선/경강선 판교역 1번 출구 도보 약 10분<br>
-                (판교역 북편 버스정류장 셔틀버스 10분 간격 운행)
+                (판교역 1번 출구 버스정류장 셔틀버스 10분 간격 운행)
             </div>
         </div>
         <div class="transport-item">
             <div class="transport-icon">🚗</div>
             <div class="transport-desc">
                 <strong>주차 안내</strong>
-                W스퀘어컨벤션 건물 내 주차장 이용 (2시간 무료)
+                W스퀘어컨벤션 건물 내 주차장 이용 (2시간 무료)<br>
+                삼환하이펙스B동 건물 내 주차장 이용 (종일 무료)
             </div>
         </div>
               
@@ -309,6 +315,9 @@ musicBtn.addEventListener("click", () => {
   else { bgm.play(); musicBtn.innerText = "🔊"; }
   isPlaying = !isPlaying;
 });
+
+  // 인트로 애니메이션
+const i=intro;for(let n=0;n<14;n++){let p=document.createElement("i");p.className="p";p.style.left=Math.random()*100+"%";let s=6+Math.random()*6;p.style.width=p.style.height=s+"px";p.style.animationDuration=3+Math.random()*3+"s";i.appendChild(p)}
         
 </script>
 </body>
