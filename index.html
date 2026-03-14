@@ -96,14 +96,15 @@ section{ padding: 50px 20px; text-align:center; }
 
 footer { padding: 50px 20px; text-align: center; color: #aaa; font-size: 12px; font-family: var(--font-serif); }
 
-#intro{position:fixed;inset:0;background:#fffaf7;display:flex;justify-content:center;align-items:center;overflow:hidden;z-index:9999;animation:o .5s 2s forwards} .t{font:34px 'Noto Serif KR',serif;letter-spacing:6px;color:#6e5b52;opacity:0;transform:translateY(20px);animation:u .7s .2s forwards} .p{position:absolute;top:-10px;width:8px;height:8px;background:#f6cbd3;border-radius:70% 70% 70% 0;opacity:.8;animation:f linear infinite} @keyframes u{to{opacity:1;transform:translateY(0)}} @keyframes f{ 0%{transform:translate(0,0) rotate(0)} 50%{transform:translate(15px,50vh) rotate(180deg)} 100%{transform:translate(-15px,110vh) rotate(360deg)} } @keyframes o{to{opacity:0;visibility:hidden}}
+#intro{position:fixed;inset:0;background:#fffaf7;display:flex;justify-content:center;align-items:center;overflow:hidden;z-index:9999;animation:o .5s 2s forwards}
+.t{font:34px 'Gowun Batang', serif;letter-spacing:6px;color:#6e5b52;opacity:0;transform:translateY(20px);animation:u .7s .2s forwards} .p{position:absolute;top:-10px;width:8px;height:8px;background:#f6cbd3;border-radius:70% 70% 70% 0;opacity:.8;animation:f linear infinite} @keyframes u{to{opacity:1;transform:translateY(0)}} @keyframes f{ 0%{transform:translate(0,0) rotate(0)} 50%{transform:translate(15px,50vh) rotate(180deg)} 100%{transform:translate(-15px,110vh) rotate(360deg)} } @keyframes o{to{opacity:0;visibility:hidden}}
         
 </style>
 </head>
 
 <body>
 
-<div id=intro><div class=t>초대합니다</div></div>
+<div id=intro><div class=t>소중한 날에<br>초대합니다</div></div>
         
 <button id="musicBtn" class="music-control">🔇</button>
 <audio id="bgm" loop><source src="music/bgm.mp3" type="audio/mp3"></audio>
@@ -175,7 +176,7 @@ footer { padding: 50px 20px; text-align: center; color: #aaa; font-size: 12px; f
     <div class="section-title" style="margin-bottom:10px;">2026.05</div>
     <div class="card" data-aos="fade-up" style="padding-top:30px;">
         <div id="calendar" class="calendar"></div>
-        <div style="margin-top:30px; font-weight:bold; color:var(--mint-deep);">D- <span id="d-day-count"></span></div>
+        <div style="margin-top:30px; font-weight:bold; color:var(--mint-deep);">D - <span id="d-day-count"></span></div>
     </div>
   </div>
 </section>
@@ -208,8 +209,8 @@ footer { padding: 50px 20px; text-align: center; color: #aaa; font-size: 12px; f
             <div class="transport-icon">🚗</div>
             <div class="transport-desc">
                 <strong>주차 안내</strong>
-                W스퀘어컨벤션 건물 내 주차장 이용 (2시간 무료)<br>
-                삼환하이펙스B동 건물 내 주차장 이용 (종일 무료)
+                W스퀘어컨벤션 건물 내 주차장(2시간 무료)<br>
+                삼환하이펙스B동 건물 내 주차장(종일 무료)
             </div>
         </div>
               
