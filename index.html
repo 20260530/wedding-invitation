@@ -8,7 +8,7 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="김남준 ♥ 정하림 결혼합니다">
 <meta property="og:description" content="2026.05.30. SAT 18:30 판교 W스퀘어컨벤션 8층 채플홀">
-<meta property="og:image" content="photo/hero.jpg"> 
+<meta property="og:image" content="photo/link.jpg"> 
 
 <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.7/kakao.min.js" 
         integrity="sha384-tJkjbtDbvoxO+diRuDtwRO9JXR7pjWnfjfRn5ePUpl7e7RJCxKCwwnfqUAdXh53p" 
@@ -96,8 +96,13 @@ section{ padding: 50px 20px; text-align:center; }
 
 footer { padding: 50px 20px; text-align: center; color: #aaa; font-size: 12px; font-family: var(--font-serif); }
 
-#intro{position:fixed;inset:0;background:#fffaf7;display:flex;justify-content:center;align-items:center;overflow:hidden;z-index:9999;animation:o .5s 2s forwards}
-.t{font:34px 'Gowun Batang', serif;letter-spacing:6px;color:#6e5b52;opacity:0;transform:translateY(20px);animation:u .7s .2s forwards} .p{position:absolute;top:-10px;width:8px;height:8px;background:#f6cbd3;border-radius:70% 70% 70% 0;opacity:.8;animation:f linear infinite} @keyframes u{to{opacity:1;transform:translateY(0)}} @keyframes f{ 0%{transform:translate(0,0) rotate(0)} 50%{transform:translate(15px,50vh) rotate(180deg)} 100%{transform:translate(-15px,110vh) rotate(360deg)} } @keyframes o{to{opacity:0;visibility:hidden}}
+/* 인트로 */
+#intro{position:fixed;inset:0;background:#fffaf7;display:flex;justify-content:center;align-items:center;overflow:hidden;z-index:9999;animation:o 1s 3s forwards}
+.t{font:34px 'Gowun Batang', serif;letter-spacing:2px;color:#6e5b52;opacity:0;transform:translateY(20px);animation:u .8s .5s forwards;text-align:center} .p{position:absolute;top:-10px;width:8px;height:8px;background:#f6cbd3;border-radius:70% 70% 70% 0;opacity:.8;animation:f linear infinite} @keyframes u{to{opacity:1;transform:translateY(0)}} @keyframes f{ 0%{transform:translate(0,0) rotate(0)} 50%{transform:translate(15px,50vh) rotate(180deg)} 100%{transform:translate(-15px,110vh) rotate(360deg)} } @keyframes o{to{opacity:0;visibility:hidden}}
+
+/* 초대장 */
+.invite-img{width:100%;max-width:420px;display:block;margin:auto;}
+.card{background:#fff;padding:30px;border-radius:12px;}
         
 </style>
 </head>
@@ -123,7 +128,9 @@ footer { padding: 50px 20px; text-align: center; color: #aaa; font-size: 12px; f
   <div class="container">
     <div class="section-title" data-aos="fade-up">초대장</div>
     <div class="card" data-aos="fade-up">
-      “내가 너희를 사랑한 것 같이<br> 
+        <img src="img/invite1.png" alt="초대장" class="invite-img">
+        <img src="img/invite1.png" alt="초대장" class="invite-img">
+            <!-- “내가 너희를 사랑한 것 같이<br> 
         너희도 서로 사랑하라”<br>
 (요한복음 13:34)<br>
 <br>
@@ -133,7 +140,7 @@ footer { padding: 50px 20px; text-align: center; color: #aaa; font-size: 12px; f
 한 길을 걷고자 합니다.<br>
 <br>
 늘 곁에서 아껴주셨던 고마운 분들을<br>
-마음 담아 초대합니다.<br>
+마음 담아 초대합니다.<br> -->
     </div>
   </div>
 </section>
