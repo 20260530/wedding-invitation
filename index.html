@@ -197,7 +197,7 @@ footer { padding: 50px 20px; text-align: center; color: #aaa; font-size: 12px; f
     <div class="section-title" style="margin-bottom:10px;">2026.05</div>
     <div class="card" data-aos="fade-up" style="padding-top:30px;">
         <div id="calendar" class="calendar"></div>
-        <div style="margin-top:30px; font-weight:bold; color:var(--mint-deep);"><span id="d-day-count"></span></div>
+        <div style="margin-top:30px; font-weight:bold; color:var(--mint-deep);">D - <span id="d-day-count"></span></div>
     </div>
   </div>
 </section>
@@ -326,7 +326,7 @@ footer { padding: 50px 20px; text-align: center; color: #aaa; font-size: 12px; f
 const today = new Date(); today.setHours(0,0,0,0);
 const target = new Date("2026-05-30");
 const dday = Math.floor((target - today) / (1000*60*60*24));
-document.getElementById("d-day-count").innerText = "D - "dday > 0 ? dday : "Today";
+document.getElementById("d-day-count").innerText = dday > 0 ? dday : "Today";
 
   // bgm 버튼 작동
 const bgm = document.getElementById("bgm");
