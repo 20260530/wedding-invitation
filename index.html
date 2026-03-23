@@ -84,6 +84,7 @@ section{ padding: 50px 20px; text-align:center; }
 .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
 .account-box { background: #fff; border: 1px solid #eee; padding: 15px; border-radius: 12px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
 .copy-btn { background: var(--mint-soft); color: var(--mint-deep); border: none; padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; cursor: pointer; }
+.account-box > div { text-align: left; }
         
 /* 공유하기 버튼 */
 .share-buttons-wrap { display: flex; gap: 10px; margin-top: 40px; }
@@ -255,15 +256,15 @@ footer { padding: 50px 20px; text-align: center; color: #aaa; font-size: 12px; f
 너른 양해 부탁드립니다.</p>
     <button class="accordion-btn">신랑측 계좌번호 <span>∨</span></button>
     <div class="accordion-content">
-        <div class="account-box"><div><div style="font-size:13px; color:#888">신랑 김남준</div><div>카카오뱅크 <strong>3333-11-3669223</strong></div></div><button class="copy-btn" onclick="copyAccount('3333-11-3669223')">복사</button></div>
-        <div class="account-box"><div><div style="font-size:13px; color:#888">신랑 아버지 김삼기</div><div>우리은행 <strong>1002-848-638920</strong></div></div><button class="copy-btn" onclick="copyAccount('1002-848-638920')">복사</button></div>
-        <div class="account-box"><div><div style="font-size:13px; color:#888">신랑 어머니 김명순</div><div>국민은행 <strong>422425-01-012917</strong></div></div><button class="copy-btn" onclick="copyAccount('422425-01-012917')">복사</button></div>
+        <div class="account-box"><div><div style="font-size:13px; color:#888">신랑 김남준</div><br>카카오뱅크 <strong>3333-11-3669223</strong></div><button class="copy-btn" onclick="copyAccount('3333-11-3669223')">복사</button></div>
+        <div class="account-box"><div><div style="font-size:13px; color:#888">신랑 아버지 김삼기</div><br>우리은행 <strong>1002-848-638920</strong></div><button class="copy-btn" onclick="copyAccount('1002-848-638920')">복사</button></div>
+        <div class="account-box"><div><div style="font-size:13px; color:#888">신랑 어머니 김명순</div><br>국민은행 <strong>422425-01-012917</strong></div><button class="copy-btn" onclick="copyAccount('422425-01-012917')">복사</button></div>
     </div>
     <button class="accordion-btn" style="margin-top:10px">신부측 계좌번호 <div>∨</div></button>
     <div class="accordion-content">
-        <div class="account-box"><div><div style="font-size:13px; color:#888">신부 정하림</div><div>국민은행 <strong>743402-00-148333</strong></div></div><button class="copy-btn" onclick="copyAccount('743402-00-148333')">복사</button></div>
-        <div class="account-box"><div><div style="font-size:13px; color:#888">신부 아버지 정세주</div><div>신한은행 <strong>110-023-295780</strong></div></div><button class="copy-btn" onclick="copyAccount('110-023-295780')">복사</button></div>
-        <div class="account-box"><div><div style="font-size:13px; color:#888">신부 어머니 이진선</div><div>국민은행 <strong>296-21-0285-624</strong></div></div><button class="copy-btn" onclick="copyAccount('296-21-0285-624')">복사</button></div>
+        <div class="account-box"><div><div style="font-size:13px; color:#888">신부 정하림</div><br>국민은행 <strong>743402-00-148333</strong></div><button class="copy-btn" onclick="copyAccount('743402-00-148333')">복사</button></div>
+        <div class="account-box"><div><div style="font-size:13px; color:#888">신부 아버지 정세주</div><br>신한은행 <strong>110-023-295780</strong></div><button class="copy-btn" onclick="copyAccount('110-023-295780')">복사</button></div>
+        <div class="account-box"><div><div style="font-size:13px; color:#888">신부 어머니 이진선</div><br>국민은행 <strong>296-21-0285-624</strong></div><button class="copy-btn" onclick="copyAccount('296-21-0285-624')">복사</button></div>
     </div>
 
     <div class="share-buttons-wrap" data-aos="fade-up">
