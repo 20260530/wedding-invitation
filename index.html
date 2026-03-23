@@ -326,7 +326,7 @@ footer { padding: 50px 20px; text-align: center; color: #aaa; font-size: 12px; f
 const today = new Date(); today.setHours(0,0,0,0);
 const target = new Date("2026-05-30");
 const dday = Math.floor((target - today) / (1000*60*60*24));
-document.getElementById("d-day-count").innerText = dday > 0 ? dday : "Today";
+document.getElementById("d-day-count").innerText = dday > 0 ? dday : "Day";
 
   // bgm 버튼 작동
 const bgm = document.getElementById("bgm");
